@@ -104,6 +104,7 @@ export default class Picker extends Component {
           onActiveCategoryChange={this._onActiveCategoryChange}
           onChange={this.props.onChange}
           onModifierChange={this._onModifierChange}
+          useNative={this.props.useNative}
         />
       </div>
     );
