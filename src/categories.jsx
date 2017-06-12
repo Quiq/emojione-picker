@@ -27,6 +27,7 @@ export default class Categories extends Component {
     modifier: PropTypes.string.isRequired,
     onActiveCategoryChange: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
+    useNative: PropTypes.bool,
     onModifierChange: PropTypes.func.isRequired
   };
 
@@ -106,7 +107,7 @@ export default class Categories extends Component {
 
     if (Array.isArray(row)) {
       return (
-        <EmojiRow key={key} onChange={onChange} style={style} emojis={row} />
+        <EmojiRow key={key} onChange={onChange} style={style} emojis={row} useNative={this.props.useNative}/>
       );
     }
 

@@ -7,6 +7,7 @@ export default class EmojiRow extends Component {
   static propTypes = {
     emojis: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,
+    useNative: PropTypes.bool,
     style: PropTypes.object.isRequired
   };
 
@@ -30,6 +31,7 @@ export default class EmojiRow extends Component {
             role="option"
             key={emoji.unicode}
             onSelect={this._handleEmojiSelect}
+            useNative={this.props.useNative}
           />
         ))}
       </div>

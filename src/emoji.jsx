@@ -10,6 +10,7 @@ export default class Emoji extends Component {
     onSelect: PropTypes.func.isRequired,
     shortname: PropTypes.string,
     title: PropTypes.string,
+    useNative: PropTypes.bool,
     role: PropTypes.string
   };
 
@@ -19,7 +20,10 @@ export default class Emoji extends Component {
   }
 
   createMarkup() {
-    return { __html: emojione.shortnameToImage(this.props.shortname) };
+    return { __html: this.props.useNative
+      ? emojione.shortnameToUnicode(this.props.shortname)
+      : emojione.shortnameToImage(this.props.shortname)
+    };
   }
 
   _handleKeyUp = ev => {

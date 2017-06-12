@@ -23,6 +23,7 @@ export default class Picker extends Component {
     searchPlaceholder: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func.isRequired,
+    useNative: PropTypes.bool,
     categories: PropTypes.object
   };
 
@@ -74,6 +75,7 @@ export default class Picker extends Component {
           role="menuitem"
           ariaLabel={`${key} category`}
           shortname={`:${details.emoji}:`}
+          useNative={this.props.useNative}
           onSelect={() => {
             this.categories.jumpToCategory(key);
           }}
