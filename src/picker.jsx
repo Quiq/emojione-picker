@@ -24,6 +24,7 @@ export default class Picker extends Component {
     className: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     useNative: PropTypes.bool,
+    showAttribution: PropTypes.bool,
     categories: PropTypes.object
   };
 
@@ -163,6 +164,12 @@ export default class Picker extends Component {
         </header>
         {this._renderSearchInput()}
         {this._renderCategories()}
+        {this.props.showAttribution &&
+            <div className="emojione-attribution">
+              <span>Emoji art supplied by </span>
+              <a href="http://emojione.com" target="_blank">Emoji One</a>
+            </div>
+          }
       </div>
     );
   }
