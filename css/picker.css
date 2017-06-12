@@ -29,6 +29,7 @@
   box-sizing: border-box;
   height: 42px;
   padding: 9px 5px;
+  width: 32px;
 }
 
 .emoji-dialog .emoji-dialog-header li img,
